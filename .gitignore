@@ -1,3 +1,7 @@
+02-experiment-tracking/artifacts/
+02-experiment-tracking/mlruns/
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
