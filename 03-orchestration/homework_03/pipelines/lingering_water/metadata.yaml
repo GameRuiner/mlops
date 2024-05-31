@@ -1,0 +1,99 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_03/data_loaders/serene_portal.py
+  downstream_blocks:
+  - prepare
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: serene portal
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: serene_portal
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_03/transformers/prepare.py
+  downstream_blocks:
+  - prepare2
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: prepare
+  retry_config: null
+  status: updated
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - serene_portal
+  uuid: prepare
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_source:
+      path: homework_03/transformers/prepare2.py
+  downstream_blocks:
+  - train_model
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: prepare2
+  retry_config: null
+  status: updated
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - prepare
+  uuid: prepare2
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_source:
+      path: homework_03/data_exporters/train_model.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: train model
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - prepare2
+  uuid: train_model
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-05-31 09:45:20.068303+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: lingering water
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: lingering_water
+variables_dir: /home/src/mage_data/homework_03
+widgets: []
